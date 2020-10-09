@@ -1,0 +1,17 @@
+{
+    "name": "cp-custom-css",
+    "display_name": "[ContentPress] Custom CSS",
+    "description": "Add custom style rules with ease.",
+    "version": "0.1",
+    "authors": [
+        {
+            "name": "wp-kitten",
+            "url": "https://wp-kitten.github.io"
+        }
+    ],
+    "contributors": [],
+    "page_url": "https://github.com/wp-kitten/cp-custom-css",
+    "update_url": "",
+    "autoload": "index.php",
+    "thumbnail": "thumb.png"
+}
