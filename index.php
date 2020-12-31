@@ -16,11 +16,11 @@ define( 'CPCS_PLUGIN_DIR_PATH', trailingslashit( wp_normalize_path( dirname( __F
 
 function cpcsGetStylesheetUrl()
 {
-    $uploadsDir = cp_get_uploads_dir();
+    $uploadsDir = vp_get_uploads_dir();
     return path_combine( $uploadsDir[ 'url' ], 'custom-styles.min.css' );
 }
 
-if ( cp_is_admin() ) {
+if ( vp_is_admin() ) {
     require_once( CPCS_PLUGIN_DIR_PATH . 'admin/hooks.php' );
     require_once( CPCS_PLUGIN_DIR_PATH . 'admin/routes.php' );
 }
@@ -28,6 +28,6 @@ if ( cp_is_admin() ) {
 /**
  * Enqueue custom styles
  */
-add_action( 'contentpress/site/head', function () {
-    ScriptsManager::enqueueStylesheet( 'contentpress-custom-styles', cpcsGetStylesheetUrl() );
+add_action( 'valpress/site/head', function () {
+    ScriptsManager::enqueueStylesheet( 'valpress-custom-styles', cpcsGetStylesheetUrl() );
 } );

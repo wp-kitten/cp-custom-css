@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::get( 'admin/cp-custom-css', function () {
     $cssData = '';
 
-    $uploadsDir = cp_get_uploads_dir();
+    $uploadsDir = vp_get_uploads_dir();
     $stylesheetFilePath = path_combine( $uploadsDir[ 'dir' ], 'custom-styles.css' );
     if ( File::isFile( $stylesheetFilePath ) ) {
         $cssData = trim( File::get( $stylesheetFilePath ) );
@@ -21,16 +21,16 @@ Route::get( 'admin/cp-custom-css', function () {
     ] );
 } )
     ->middleware( [ 'web', 'auth', 'active_user' ] )
-    ->name( 'admin.cp_custom_css' );
+    ->name( 'admin.vp_custom_css' );
 
 Route::post( 'admin/cp-custom-css/save', function () {
-    if ( !cp_current_user_can( 'manage_options' ) ) {
+    if ( !vp_current_user_can( 'manage_options' ) ) {
         return redirect()->back()->with( 'message', [
             'class' => 'warning',
             'text' => __( 'cpcs::m.You are not allowed to perform this action.' ),
         ] );
     }
-    $uploadsDir = cp_get_uploads_dir();
+    $uploadsDir = vp_get_uploads_dir();
     $stylesheetFilePath = path_combine( $uploadsDir[ 'dir' ], 'custom-styles.css' );
     $stylesheetMinFilePath = path_combine( $uploadsDir[ 'dir' ], 'custom-styles.min.css' );
 
@@ -45,4 +45,4 @@ Route::post( 'admin/cp-custom-css/save', function () {
     ] );
 } )
     ->middleware( [ 'web', 'auth', 'active_user' ] )
-    ->name( 'admin.cp_custom_css.save' );
+    ->name( 'admin.vp_custom_css.save' );

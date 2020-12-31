@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('page-title')
-    <title>{{__('cpcs::m.ContentPress Custom CSS')}}</title>
+    <title>{{__('cpcs::m.ValPress Custom CSS')}}</title>
 @endsection
 
 @section('main')
@@ -9,14 +9,14 @@
     <div class="app-title">
         <div class="cp-flex cp-flex--center cp-flex--space-between">
             <div>
-                <h1>{{__('cpcs::m.ContentPress Custom CSS')}}</h1>
+                <h1>{{__('cpcs::m.ValPress Custom CSS')}}</h1>
             </div>
         </div>
     </div>
 
     @include('admin.partials.notices')
 
-    @if(cp_current_user_can('manage_options'))
+    @if(vp_current_user_can('manage_options'))
         <div class="row">
             <div class="col-md-12">
                 <div class="tile">
@@ -30,7 +30,7 @@
                             <textarea id="cpcs_custom_css_textarea" name="">{!! $css_rules !!}</textarea>
                         </div>
 
-                        <form method="post" id="cpcs_form" class="clearfix" action="{{route('admin.cp_custom_css.save')}}">
+                        <form method="post" id="cpcs_form" class="clearfix" action="{{route('admin.vp_custom_css.save')}}">
                             <input type="hidden" name="cpcs_custom_css" id="cpcs_custom_css_field" value=""/>
                             <button type="submit" class="btn btn-primary mt-4 mr-2">{{__('cpcs::m.Save')}}</button>
                             @csrf

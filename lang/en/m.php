@@ -1,6 +1,6 @@
 <?php
 return [
-    'ContentPress Custom CSS' => 'ContentPress Custom CSS',
+    'ValPress Custom CSS' => 'ValPress Custom CSS',
     'Save' => 'Save',
     'You are not allowed to perform this action.' => 'You are not allowed to perform this action.',
     'Custom styles have been saved.' => 'Custom styles have been saved.',
